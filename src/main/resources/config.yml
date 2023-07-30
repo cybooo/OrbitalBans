@@ -1,0 +1,48 @@
+database:
+  host:
+  port:
+  username:
+  database:
+  password:
+punished-messages:
+  blacklisted: '&cYou are blacklisted from this server!\n\n&7Reason: &f{REASON}\n&7Issued by: &f{ADMINISTRATOR}'
+  banned: '&cYou are banned from this server!\n\n&7Reason: &f{REASON}\n&7Issued by: &f{ADMINISTRATOR}\n&7Ends: &f{ENDS}'
+  muted: '&c&l! &cYou are muted for &4{ENDS}&c! &8(&7Reason: &f{REASON} &8| &7Issued by: &f{ADMINISTRATOR}&8)'
+  kicked: '&cYou have been kicked from this server!\n\n&7Reason: &f{REASON}\n&7Issued by: &f{ADMINISTRATOR}'
+commands:
+  ban:
+    usage: '&7Usage: &f/ban <player> <length | (d)ays, (h)ours, (m)inutes, (s)econds> <reason>'
+    example: '&7Example: &f/ban cybooo 14d Cheating'
+    already-banned: '&c{PLAYER} is already banned!'
+    success: '&a{PLAYER} has been banned!'
+  permanent-ban:
+    usage: '&7Usage: &f/pban <player> <reason>'
+    example: '&7Example: &f/ban cybooo Cheating'
+    already-banned: '&c{PLAYER} is already banned!'
+    success: '&a{PLAYER} has been banned!'
+  kick:
+    usage: '&7Usage: &f/kick <player> <reason>'
+    player-not-found: '&c{PLAYER} is not online!'
+    example: '&7Example: &f/kick cybooo Spamming'
+    success: '&a{PLAYER} has been kicked!'
+  mute:
+    usage: '&7Usage: &f/mute <player> <length | (d)ays, (h)ours, (m)inutes, (s)econds> <reason>'
+    already-muted: '&c{PLAYER} is already muted!'
+    example: '&7Example: &f/mute cybooo 1h Spamming'
+    success: '&a{PLAYER} has been muted!'
+  punishment-history:
+    caching: '&cCaching punishments..'
+    punishments-for: '&7Punishments for &f{PLAYER}&7:'
+    ban: '&7Ban &8- &f{REASON} &8| &7Admin: &f{ADMINISTRATOR} &8| &7Issued: &f{ISSUED} &8| &7Ends: &f{ENDS}'
+    kick: '&7Kick &8- &f{REASON} &8| &7Admin: &f{ADMINISTRATOR} &8| &7Issued: &f{ISSUED}'
+    mute: '&7Mute &8- &f{REASON} &8| &7Admin: &f{ADMINISTRATOR} &8| &7Issued: &f{ISSUED} &8| &7Ends: &f{ENDS}'
+  unban:
+    usage: '&7Usage: &f/unban <player>'
+    example: '&7Example: &f/unban cybooo'
+    not-banned: '&c{PLAYER} is not banned!'
+    success: '&a{PLAYER} has been unbanned!'
+  unmute:
+    usage: '&7Usage: &f/unban <player>'
+    example: '&7Example: &f/unban cybooo'
+    not-muted: '&c{PLAYER} is not muted!'
+    success: '&a{PLAYER} has been unmuted!'

@@ -1,0 +1,14 @@
+name: OrbitalBans
+version: '${version}'
+main: dev.cybo.orbitalbans.OrbitalBans
+api-version: '1.19'
+commands:
+  ban:
+  kick:
+  mute:
+  pban:
+    aliases: [permanentban, permban]
+  history:
+    aliases: [punishmenthistory, phistory]
+  unban:
+  unmute:
