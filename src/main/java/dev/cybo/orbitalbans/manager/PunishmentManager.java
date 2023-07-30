@@ -30,34 +30,35 @@ public class PunishmentManager {
         String kickMessage;
 
         switch (punishmentType) {
-            case BAN:
+            case BAN -> {
                 query = "INSERT INTO `bans` (`player_name`, `administrator`, `created_at`, `expires_at`, `reason`) VALUES (?, ?, ?, ?, ?)";
                 kickMessage = plugin.getConfig().getString("punished-messages.banned")
                         .replace("{REASON}", punishment.getReason())
                         .replace("{ADMINISTRATOR}", punishment.getAdministrator())
                         .replace("{ENDS}", FormatUtils.formatRemainingTime(punishment.getEnds() - System.currentTimeMillis()));
-                break;
-            case BLACKLIST:
+            }
+            case BLACKLIST -> {
                 query = "INSERT INTO `blacklists` (`player_name`, `administrator`, `created_at`, `reason`) VALUES (?, ?, ?, ?)";
                 kickMessage = plugin.getConfig().getString("punished-messages.blacklisted")
                         .replace("{REASON}", punishment.getReason())
                         .replace("{ADMINISTRATOR}", punishment.getAdministrator());
-                break;
-            case MUTE:
+            }
+            case MUTE -> {
                 query = "INSERT INTO `mutes` (`player_name`, `administrator`, `created_at`, `expires_at`, `reason`) VALUES (?, ?, ?, ?, ?)";
                 kickMessage = FormatUtils.formatConfigString(plugin.getConfig().getString("punished-messages.muted"))
                         .replace("{REASON}", punishment.getReason())
                         .replace("{ADMINISTRATOR}", punishment.getAdministrator())
                         .replace("{ENDS}", FormatUtils.formatRemainingTime(punishment.getEnds() - System.currentTimeMillis()));
-                break;
-            case KICK:
+            }
+            case KICK -> {
                 query = "INSERT INTO `kicks` (`player_name`, `administrator`, `created_at`, `reason`) VALUES (?, ?, ?, ?)";
                 kickMessage = plugin.getConfig().getString("punished-messages.kicked")
                         .replace("{REASON}", punishment.getReason())
                         .replace("{ADMINISTRATOR}", punishment.getAdministrator());
-                break;
-            default:
+            }
+            default -> {
                 return null;
+            }
         }
 
         if (target != null && target.isOnline()) {
